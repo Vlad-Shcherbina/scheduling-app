@@ -13,6 +13,11 @@ services:
       DATABASE_URL: file:/data/data.db
       SITE_PASSWORD: ${SITE_PASSWORD:-}
       AUTH_SECRET: ${AUTH_SECRET:-}
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
 
 volumes:
   data:
